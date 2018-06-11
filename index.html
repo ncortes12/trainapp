@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 
 </head>
 
@@ -50,10 +51,11 @@
             <div class="card">
 
                 <h4 id="title">Add Train</h4>
+                <div class="input">
                 <div class="row ">
                     <form class="col s12">
                         <div class="row">
-                            
+
                             <div class="input-field col s12">
                                 <textarea id="trainName" class="materialize-textarea "></textarea>
                                 <label for="textarea1">Train Name</label>
@@ -62,7 +64,7 @@
                     </form>
                     <form class="col s12">
                         <div class="row">
-                            
+
                             <div class="input-field col s12">
                                 <textarea id="destination" class="materialize-textarea "></textarea>
                                 <label for="textarea1">Destination</label>
@@ -71,7 +73,7 @@
                     </form>
                     <form class="col s12">
                         <div class="row">
-                            
+
                             <div class="input-field col s12">
                                 <textarea id="frequency" class="materialize-textarea"></textarea>
                                 <label for="textarea1">Frequency (Min)</label>
@@ -79,14 +81,18 @@
                         </div>
                     </form>
                     <form class="col s12">
-                            <div class="row">
-                                
-                              <div class="input-field col s12">
+                        <div class="row">
+
+                            <div class="input-field col s12">
                                 <textarea id="arrival" class="materialize-textarea"></textarea>
                                 <label for="textarea1">Next Arrival</label>
-                              </div>
                             </div>
-                          </form>
+                        </div>
+                    </div>
+                        <a class="waves-effect waves-light btn-small" id="addBtn">Add Train</a>
+                    </form>
+
+                    
                 </div>
             </div>
         </div>

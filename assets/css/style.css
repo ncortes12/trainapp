@@ -8,8 +8,11 @@ img {
     font-size:64px;
     font-weight: 200;
 }
-.input{margin-left:10px;
-        margin-right:10px;}
+.input{margin-left:50px;
+        margin-right:50px;}
 
 #title{padding-left:50px;
         padding-top:25px;}
+
+#addBtn{margin-left: 0px;
+        margin-bottom: 10px;}
