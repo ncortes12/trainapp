@@ -62,25 +62,29 @@ database.ref().on("child_added", function (snapshot) {
     frequencyCell.text(snap.trainFrequency);
     newRow.append(frequencyCell);
 
+    var nextTime = parseInt(snap.nextTrain);
+    var convFrequency = parseInt(snap.trainFrequency);
+    var convert = moment(nextTime, "HH:mm").subtract(1, "years");
+    var current = moment();
+    var diff = moment().diff(moment(convert), "minutes");
+    var remainder = diff % convFrequency;
+    var minutesUntil = convFrequency - remainder;
+    var nexTrain = moment().add(minutesUntil, "minutes");
+    var timeDisplay = moment(nexTrain).format("hh:mm");
+    
+    console.log(nextTime);
+    console.log(convert)
+    console.log(current);
+    console.log(diff);
+    console.log(remainder);
+    console.log(minutesUntil);
+    console.log(timeDisplay);
+
     var nextCell = $("<td></td>");
-    nextCell.text(snap.nextTrain);
+    nextCell.text(timeDisplay);
     newRow.append(nextCell);
 
     var trainCell = $("<td></td>");
-    var nextTime = parseInt(snap.nextTrain)
-    console.log(nextTime);
-    var convert = moment(nextTime, "HH:mm").subtract(1, "years");
-    console.log(convert)
-    var current = moment();
-    console.log(current);
-    var diff = moment().diff(moment(convert), "minutes");
-    console.log(diff);
-    var convFrequency = parseInt(snap.trainFrequency);
-    var remainder = diff % convFrequency;
-    console.log(remainder);
-    var minutesUntil = convFrequency - remainder;
-    console.log(minutesUntil);
-    
     trainCell.text(minutesUntil);
     newRow.append(trainCell);
 
