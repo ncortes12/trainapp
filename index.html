@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
@@ -36,7 +37,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody class="trainSchedule">
 
                         </tbody>
                     </table>
@@ -85,7 +86,7 @@
 
                             <div class="input-field col s12">
                                 <textarea id="arrival" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Next Arrival</label>
+                                <label for="textarea1">Next Arrival (HH:mm military time)</label>
                             </div>
                         </div>
                     </div>
