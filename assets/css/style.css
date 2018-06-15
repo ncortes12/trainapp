@@ -1,7 +1,12 @@
+#header-image{border-radius:5%;}
+
 img {
     opacity: 0.7;
-    filter: alpha(opacity=50);
-}
+    
+    }
+
+
+    
 
 #cardTitle{
     color:black;

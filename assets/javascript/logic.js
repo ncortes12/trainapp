@@ -15,15 +15,7 @@ var frequency;
 var next;
 var database = firebase.database();
 
-function trainTime() {
 
-    var convert = moment(next, "HH:mm").subtract(1, "years");
-    var current = moment();
-    var diff = moment().diff(moment(convert), "minutes");
-    var remainder = diff % frequency;
-    var minutesUntil = frequency - remainder;
-    var timeUntil = moment().add(minutesUntil, "minutes");
-}
 
 $("#addBtn").on("click", function run() {
     name = $("#trainName").val().trim();
@@ -45,6 +37,7 @@ $("#addBtn").on("click", function run() {
     });
 });
 
+
 database.ref().on("child_added", function (snapshot) {
     var snap = snapshot.val();
 
@@ -62,6 +55,7 @@ database.ref().on("child_added", function (snapshot) {
     frequencyCell.text(snap.trainFrequency);
     newRow.append(frequencyCell);
 
+  
     var nextTime = parseInt(snap.nextTrain);
     var convFrequency = parseInt(snap.trainFrequency);
     var convert = moment(nextTime, "HH:mm").subtract(1, "years");
@@ -70,7 +64,7 @@ database.ref().on("child_added", function (snapshot) {
     var remainder = diff % convFrequency;
     var minutesUntil = convFrequency - remainder;
     var nexTrain = moment().add(minutesUntil, "minutes");
-    var timeDisplay = moment(nexTrain).format("hh:mm");
+    var timeDisplay = moment(nexTrain).format("hh:mm A");
     
     console.log(nextTime);
     console.log(convert)
@@ -89,9 +83,13 @@ database.ref().on("child_added", function (snapshot) {
     newRow.append(trainCell);
 
 
+
+
     $(".trainSchedule").append(newRow);
 
 })
+
+
 
 
 
